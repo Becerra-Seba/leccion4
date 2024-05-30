@@ -4,13 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS can be added here */
+        body {
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h2>Profile</h2>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <input type="file" name="profile_picture">
-        <button type="submit">Upload Profile Picture</button>
-    </form>
+    <div class="container">
+        <h2>Profile</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="profile_picture">Select Profile Picture:</label>
+                <input type="file" class="form-control-file" id="profile_picture" name="profile_picture">
+            </div>
+            <button type="submit" class="btn btn-primary">Upload Profile Picture</button>
+        </form>
+    </div>
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+

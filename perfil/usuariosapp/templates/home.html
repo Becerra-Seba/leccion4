@@ -3,23 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil</title>
+    <title>Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS can be added here */
+        body {
+            padding-top: 56px; /* 56px is the height of the fixed navbar */
+        }
+    </style>
 </head>
 <body>
-    <h2>Perfil de Usuario</h2>
-    <div>
-        {% if user.is_authenticated %}
-            <p>¡Hola, {{ user.username }}!</p>
-            {% if user.userprofile.profile_picture %}
-                <img src="{{ user.userprofile.profile_picture.url }}" alt="Imagen de perfil" width="50px">
-            {% else %}
-                <p>No has subido una imagen de perfil todavía.</p>
-            {% endif %}
-            <a href="{% url 'logout' %}">Cerrar sesión</a>
-        {% else %}
-            <p>Inicia sesión para ver tu perfil.</p>
-            <a href="{% url 'login' %}">Iniciar sesión</a>
-        {% endif %}
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Your Brand</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="container">
+        <h2>Welcome to Your Website</h2>
+        <p>This is the home page content.</p>
     </div>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
